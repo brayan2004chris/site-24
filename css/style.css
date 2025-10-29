@@ -1,0 +1,306 @@
+/*Atribuindo valores que serão reutilizados*/
+:root {
+    --cor-de-fundo: rgb(243, 238, 160);
+    /*Definindo cor de fundo*/
+    --cor-de-letra: #3700ff;
+    /*Definindo cor de letra*/
+}
+
+h1{
+    color: black;
+    font-size: 2em;
+}
+
+@media (max-width: 600px) {
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    button{
+        width: 100%;
+        border-radius: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+
+    h1{
+        font-size: 1.75em;
+    }
+
+    button {
+        width: 100%;
+        border-radius: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding-top: 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.carrosel{
+    width: 100%;
+    height: 384px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--cor-de-letra);
+}
+.imagem-fundo{
+    background-image: url("https://wallpapercave.com/wp/wp9153506.jpg");
+    background-repeat: cover;
+    background-position: 50%;
+    opacity: 25%;
+    position: absolute;
+    width: 100%;
+    height: 384px;
+}
+.seta-direita{
+    background-color: transparent;
+    border: none;
+    z-index: 5;
+}
+.seta-direita:hover{
+    background-color: var(--cor-de-fundo);
+}
+.seta-esquerda{
+    background-color: transparent;
+    z-index: 5;
+    border: none;
+}
+.seta-esquerda:hover{
+    background-color: var(--cor-de-fundo);
+}
+
+.contendo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /*Informo que a caixa será dividida em linha*/
+    flex-wrap: wrap;
+    /*Se o elemento não encaixar, va para linha de baixo*/
+    border-radius: 4px;
+    max-width: 1088px;
+    /*O tamanho maximo que esse elemento pode ter*/
+}
+
+.card {
+    width: 256px;
+    margin: 4px 8px 4px 8px;
+    background-color: var(--cor-de-letra);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.card>a {
+    width: 80%;
+    text-decoration: none;
+    text-align: center;
+    color: var(--cor-de-letra);
+    padding: 8px 0px 8px 0px;
+    background-color: var(--cor-de-fundo);
+    border-radius: 16px;
+}
+
+.card>a:hover {
+    background-color: red;
+}
+
+header {
+    width: 100%;
+    height: 64px;
+    /* Fixa o no cabeçalho no topo da tela */
+    position: fixed;
+    /* Informe em qual posição ficará fixa*/
+    /* Em cima*/
+    top: 0px;
+    /*Esquerda*/
+    left: 0px;
+    /*Direita*/
+    right: 0px;
+    /*Vou garantir que o cabeçalho está acima dos demais elementos da pag*/
+    z-index: 1000;
+}
+
+.navegação {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    color: white;
+    /* Posição relativa ao pai(header), principal quando ocultar o menu*/
+    position: relative;
+    background-color: transparent;
+}
+
+/*Estiliza os elementos a dentro de nav-desktop*/
+.nav-desktop a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;
+    font-size: 16px;
+}
+
+.nav-desktop a:hover {
+    color: #000000;
+}
+
+.pesquisa {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 192px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+}
+
+.pesquisa input {
+    width: 100;
+    padding: 4px;
+    border: none;
+    border-radius: 16px;
+}
+
+.pesquisa button {
+    background-color: var(--cor-de-letra);
+    border: none;
+    border-radius: 16px;
+}
+
+.pesquisa button:hover {
+    background-color: #ccc;
+}
+
+.usuario{
+    background-color: red;
+}
+
+.menu-escondido,
+.menu {
+    /*Esconder o checkbox e o menu*/
+    display: none;
+}
+
+.linha {
+    /*Faz com que cada linha ocupe seu proprio espaço*/
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 4px;
+    /*Anima todas as propriedades que mudam em 0.3s*/
+    transition: all 0.3s ease-in-out;
+}
+
+.menu {
+    max-height: 0;
+    /*Esconde o conteúdo que transborda quando o menu está fechado */
+    overflow: hidden;
+    /*Anima a abertura/fechamento do menu */
+    transition: max-height 0.4s ease-in-out;
+    list-style: none;
+    /*Posiciona o menu em relação ao seu ancestral mais proximo (.navegação)*/
+    position: absolute;
+    /*Posiciona o menu lateral abaixo do cabeçalho*/
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: gold;
+    /*Posição em relação ao demais elementos (-1 a atrás, 1000 a frente)*/
+    z-index: 1000;
+}
+
+.menu li {
+    text-align: center;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 16px;
+}
+
+.menu li a:hover {
+    color: #dc238f;
+}
+
+/*Quando o usuario tocar no menu, vai estilizar (dar peso) ao seu irmão (menu)*/
+.menu-escondido:checked~.menu {
+    max-height: 500px;
+    padding: 8px 0;
+}
+
+.menu-escondido:checked~.hamburguer .linha1 {
+    /*Transformando as linhas para um X*/
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-escondido:checked~.hamburguer .linha2 {
+    /*Torna o elemento invisivel*/
+    opacity: 0;
+}
+
+.menu-escondido:checked~.hamburguer .linha3 {
+    /*Transformando as linhas para um X*/
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+@media (max-width: 800px) {
+    .seta{
+        width: auto;
+    }
+    .seta:hover{
+        background-color: #4c4aff;
+    }
+    .card {
+        width: 100%;
+        margin: 4px 8px 4px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 8px;
+    }
+    .nav-desktop, .usuario {
+        /*Removendo o peso dos elementos*/
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .hamburguer{
+        /*Mostra o cursor de mão*/
+        cursor: pointer;
+        /*Adiciona um espaçamento de 8px*/
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 32px;
+        height: 32px;
+    }
+    .hamburguer:hover .linha{
+        background-color: #dc232b;
+    }
+
+
+}

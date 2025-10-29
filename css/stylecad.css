@@ -1,0 +1,107 @@
+:root{
+    --cor-de-fundo: rgb(70, 130, 156); /*Define a cor de fundo*/
+    --cor-de-letra: rgb(255, 17, 0);/*Dinifir cor das letras*/
+    --cor-de-letra2: rgb(243, 238, 160);
+    --cor-de-fundo2: rgb(255, 255, 255);
+}
+header{display: flex; 
+ height: 100px;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+margin: 0px}
+.superior button{
+    width: auto;
+    padding: 5px 10px;
+    background-color: rgb(0, 119, 255);
+    color: black;
+}
+.superior button:hover{background-color: var(--cor-de-letra2);}
+.superior ul a{font-size: 25px;}
+h1{font-size: 2em;
+text-align: center;}
+
+main{
+    color: black;
+    background-image: url("https://wallpaperaccess.com/full/1328740.png");
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+    background-position: center;
+    padding: 220px;
+    text-align: center;
+    padding-top: 115px;
+}
+
+/*Define como os elementos vão se comportar em telas de com o tamanho menor*/
+    @media (max-widht:600px)/*Precisa especificar essa tela em pixel*/{
+        h1{font-size: 1.5em};/*Define o tamanho do texto*/
+        button{
+            width: 100%;
+        border-radius: 0px;
+    margin-bottom: 10px;}
+    }
+    @media (min-width:601px) and (max-width: 1200px)/*Precisa especificar esse tela em pixels*/
+    {h1{
+        font-size: 1.75em;
+    }
+    button{
+        width: 100%;
+        border-radius: 0px;
+        margin-bottom: 10px;
+    }
+}
+    /*Estou atribuindo que todos os elementos essa propriedade*/
+*{margin: 0;/*Espaço interno*/
+padding: 0;/*Espaço externo*/
+/*Cor das letras do Html*/
+font-size: 20px;}
+/*Atribuindo valores que serão utilizados*/
+form{    
+display: flex; /*Define a flexibiliadade no corpo*/
+flex-direction: column; /*Organiza os elementos da caixa em coluna*/
+justify-content: center; /*Centraliza os elementos na horizontal*/
+align-items: center; /*Centraliza os elementos verticalmente*/
+padding-left: 16px;/*Espaço externo a esquerda*/
+padding-right: 16px;/*Espaço externo a direita*/
+}
+/*Familia de elementos, onde sera usada a classe*/
+.controle{
+    padding-top: 100px;/*Espaço externo em cima*/
+    padding-bottom: 10px;/*Espaço externo em baixo*/
+    border-radius: 25px; /* Borda radiana ou circular*/
+    width: 100%;
+text-align: center;}
+/*Denfine um espaço entre os descendentes*/
+.controle > * form div{
+    width: 100%;
+}
+input[type="text"], input[type="email"],
+input[type="passaword"], select, textarea{
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid 0e6393;/*Aplicando uma borda com um estilo especifico*/
+    border-radius: 4px;
+}
+textarea{
+    resize: none;/*Desabilita a edição do tamanho do campo textarea*/
+}
+fieldset{
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+button{background-color: rgb(0, 0, 0);
+    color: var(--cor-de-letra2);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 16px;
+    width: 100%;
+   margin:1px;
+}
+button:hover{background-color: rgb(255, 0, 0);}
+footer{
+    font-size: 100%;
+list-style: none;
+text-align: center;}

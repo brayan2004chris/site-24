@@ -1,0 +1,63 @@
+:root {
+    --cor-de-fundo: rgb(243, 238, 160);
+    /*Definindo cor de fundo*/
+    --cor-de-letra: #3700ff;
+    /*Definindo cor de letra*/
+}
+
+header{display: flex; 
+ height: 100px;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+margin: 0px}
+main{width: 500px;
+justify-self: center;
+align-items: center;
+padding: 100px;
+text-align: center;
+margin-right: 100px;
+color: rgb(0, 0, 0);}
+
+.contendo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /*Informo que a caixa será dividida em linha*/
+    flex-wrap: wrap;
+    /*Se o elemento não encaixar, va para linha de baixo*/
+    border-radius: 4px;
+    max-width: 1088px;
+    /*O tamanho maximo que esse elemento pode ter*/
+    align-items: center;
+}
+
+.card {
+    width: 256px;
+    margin: 4px 8px 4px 8px;
+    background-color: var(--cor-de-letra);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.card>a {
+    width: 80%;
+    text-decoration: none;
+    text-align: center;
+    color: var(--cor-de-letra);
+    padding: 8px 0px 8px 0px;
+    background-color: var(--cor-de-fundo);
+    border-radius: 16px;
+}
+
+.card>a:hover {
+    background-color: red;
+}
+
+
+footer{font-size: 30px;
+list-style: none;
+text-align: center;}
